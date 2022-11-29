@@ -7,6 +7,7 @@ int main(void)
     widerstand ds;           //ein Widerstandsdatensatz zum späteren Speichern in dataArray
     char chr, puffer[10];
     bool exit = false;
+    vector<widerstand> dataArray(0);
 
     while(true){
         cout << "\n\n Was wollen Sie tun?";
@@ -33,25 +34,30 @@ int main(void)
                     cin >> puffer;
                     /*TODO: ggf. eigene support.h inkludieren und Funktion convertToInt() verwenden*/
                 }
-                while( /*TODO*/ );
+                while( /*TODO: until correct value given*/ )
+                /*TODO: here get dimensions of R*/
 
-                /*TODO*/
-                if( /*TODO*/){
-                    ausgabe(dataArrayFeld);
+                if( /*TODO: DUNNO! if everything is written? */){
+                    printData(ds);
                     break;
                 }
             case 'a':
-            /*TODO*/
+                printData(dataArray);
                 break;
             case 's':
                 system("cls");
-            /*TODO*/
+                if (writeToFile(dataArray)==true){
+                    cout << "Speichern erfolgreich!\n";
+                }else{
+                    cout << "Speichern fehlgeschlagen\n";
+                }
                 break;
-            case 'b': exit = true;
+            case 'b':
+                exit = true;
                 break;
-        }//switch
+        }
         if(exit) break;
-    }//while
+    }
     return EXIT_SUCCESS;
 }
 
