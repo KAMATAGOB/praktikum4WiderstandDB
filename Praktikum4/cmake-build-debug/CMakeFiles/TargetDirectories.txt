@@ -1,0 +1,3 @@
+/Users/johannesharnisch/Documents/GitHub/praktikum4WiderstandDB/Praktikum4/cmake-build-debug/CMakeFiles/Praktikum4.dir
+/Users/johannesharnisch/Documents/GitHub/praktikum4WiderstandDB/Praktikum4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/johannesharnisch/Documents/GitHub/praktikum4WiderstandDB/Praktikum4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
