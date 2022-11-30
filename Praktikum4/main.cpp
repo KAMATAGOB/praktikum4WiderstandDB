@@ -26,7 +26,8 @@ int main(void)
                 cout << "\n\n Eingabe eines neuen Datensatzes. ";
                 //Widerstands-Bauform
                 cout << "\n Widerstands-Bauform: ";
-                cin >> /*TODO*/
+                cin >> ds.design;
+                /*TODO*/
                 //Widerstands-Wert
                 do {
                     cout << "\n Widerstands-Wert ";
@@ -34,11 +35,11 @@ int main(void)
                     cin >> puffer;
                     /*TODO: ggf. eigene support.h inkludieren und Funktion convertToInt() verwenden*/
                 }
-                while( /*TODO: until correct value given*/ )
-                /*TODO: here get dimensions of R*/
+                while( /*TODO: until correct value given*/ );
+                /*TODO: here, get dimensions of R*/
 
                 if( /*TODO: DUNNO! if everything is written? */){
-                    printData(ds);
+                    printData(ds);//imp  new funktion to give out ds
                     break;
                 }
             case 'a':
