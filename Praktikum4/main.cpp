@@ -9,6 +9,8 @@ int main(void)
     bool exit = false;
     vector<widerstand> dataArray(0);
 
+    //imp here vector import
+
     while(true){
         cout << "\n\n Was wollen Sie tun?";
         cout << "\n Neuen Widerstand eingeben        (n/N)";
@@ -22,26 +24,29 @@ int main(void)
             case 'n':
                 system("cls");
 
-                /*TODO*/
+                /*TODO: dunno what comes here*/
                 cout << "\n\n Eingabe eines neuen Datensatzes. ";
                 //Widerstands-Bauform
                 cout << "\n Widerstands-Bauform: ";
                 cin >> ds.design;
-                /*TODO*/
+                /*later: should be done. maybe cin.getline*/
                 //Widerstands-Wert
                 do {
                     cout << "\n Widerstands-Wert ";
                     cout << "(Dezimaltrennzeichen ist der Punkt!): ";
                     cin >> puffer;
-                    /*TODO: ggf. eigene support.h inkludieren und Funktion convertToInt() verwenden*/
+                    /*imp: ggf. eigene support.h inkludieren und Funktion convertToInt() verwenden*/
                 }
-                while( /*TODO: until correct value given*/ );
+                while( /*TODO: until correct value given. convertToInt() returns true*/ );
                 /*TODO: here, get dimensions of R*/
 
-                if( /*TODO: DUNNO! if everything is written? */){
-                    printData(ds);//imp  new funktion to give out ds
+                //imp write everything in ds
+
+                if( /*TODO: DUNNO! if everything is written? // import() returns true? */){
+                    printData(ds);//imp  new funktion to give out ds //hack overload?
                     break;
                 }
+                //later after now only optimization
             case 'a':
                 printData(dataArray);
                 break;
