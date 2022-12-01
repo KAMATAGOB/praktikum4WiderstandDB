@@ -6,6 +6,7 @@
 #define PRAKTIKUM4_SUPPORT_H
 
 int convertToInt(char input[]);
+
 double convertToDouble(char input[]);
 
 #endif //PRAKTIKUM4_SUPPORT_H

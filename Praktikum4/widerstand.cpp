@@ -12,11 +12,14 @@ void printData(widerstand dataArray) {
 }
 
 bool writeToFile(vector<widerstand> dataArray) {
-    return false;
+    bool done = false;
+
+    return done;
 }
 
 bool importToVector(vector<widerstand> dataArray, widerstand input) {
-    return false;
+    dataArray.push_back(input);
+    return true;
 }
 
 

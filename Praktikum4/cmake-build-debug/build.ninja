@@ -58,6 +58,12 @@ build CMakeFiles/Praktikum4.dir/widerstand.cpp.o: CXX_COMPILER__Praktikum4_Debug
   OBJECT_DIR = CMakeFiles/Praktikum4.dir
   OBJECT_FILE_DIR = CMakeFiles/Praktikum4.dir
 
+build CMakeFiles/Praktikum4.dir/support.cpp.o: CXX_COMPILER__Praktikum4_Debug /Users/johannesharnisch/Documents/GitHub/praktikum4WiderstandDB/Praktikum4/support.cpp || cmake_object_order_depends_target_Praktikum4
+  DEP_FILE = CMakeFiles/Praktikum4.dir/support.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -std=gnu++20
+  OBJECT_DIR = CMakeFiles/Praktikum4.dir
+  OBJECT_FILE_DIR = CMakeFiles/Praktikum4.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Praktikum4
@@ -66,7 +72,7 @@ build CMakeFiles/Praktikum4.dir/widerstand.cpp.o: CXX_COMPILER__Praktikum4_Debug
 #############################################
 # Link the executable Praktikum4
 
-build Praktikum4: CXX_EXECUTABLE_LINKER__Praktikum4_Debug CMakeFiles/Praktikum4.dir/main.cpp.o CMakeFiles/Praktikum4.dir/widerstand.cpp.o
+build Praktikum4: CXX_EXECUTABLE_LINKER__Praktikum4_Debug CMakeFiles/Praktikum4.dir/main.cpp.o CMakeFiles/Praktikum4.dir/widerstand.cpp.o CMakeFiles/Praktikum4.dir/support.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk
   OBJECT_DIR = CMakeFiles/Praktikum4.dir
   POST_BUILD = :

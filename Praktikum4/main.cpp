@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+
 #include "widerstand.h"
 #include "support.h"
 
