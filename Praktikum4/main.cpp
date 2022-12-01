@@ -1,15 +1,17 @@
 #include <iostream>
 #include "widerstand.h"
+#include "support.h"
 
 int main(void)
 {
-    //TODO
+
     widerstand ds;           //ein Widerstandsdatensatz zum späteren Speichern in dataArray
     char chr, puffer[10];
     bool exit = false;
+
     vector<widerstand> dataArray(0);
 
-    //imp here vector import
+
 
     while(true){
         cout << "\n\n Was wollen Sie tun?";
@@ -21,7 +23,7 @@ int main(void)
         cin >> chr;
 
         switch (tolower(chr)) {
-            case 'n':
+            case 'n':// IMP format output correctly
                 system("cls");
 
                 /*TODO: dunno what comes here*/
@@ -29,26 +31,35 @@ int main(void)
                 //Widerstands-Bauform
                 cout << "\n Widerstands-Bauform: ";
                 cin >> ds.design;
-                /*later: should be done. maybe cin.getline*/
                 //Widerstands-Wert
                 do {
                     cout << "\n Widerstands-Wert ";
                     cout << "(Dezimaltrennzeichen ist der Punkt!): ";
                     cin >> puffer;
-                    /*imp: ggf. eigene support.h inkludieren und Funktion convertToInt() verwenden*/
+                    ds.value = convertToDouble(puffer);
                 }
-                while( /*TODO: until correct value given. convertToInt() returns true*/ );
-                /*TODO: here, get dimensions of R*/
+                while(ds.value <= 0);
 
-                //imp write everything in ds
+                do {
+                    cout << "\n Widerstands-dimension ";
+                    cout << "(mΩ --> 0, Ω --> 1, kΩ --> 2, MΩ -->3): ";
+                    cin >> puffer;
+                    ds.dim = convertToInt(puffer);
+                }
+                while(!(ds.dim == 0 || ds.dim == 1 || ds.dim==2 || ds.dim==3));
 
-                if( /*TODO: DUNNO! if everything is written? // import() returns true? */){
-                    printData(ds);//imp  new funktion to give out ds //hack overload?
+
+                if(importToVector(dataArray, ds)){
+                    printData(ds);
                     break;
                 }
                 //later after now only optimization
             case 'a':
-                printData(dataArray);
+                if(dataArray.size() == 0){
+                   cout << "Bitte erst Daten hinterlegen!\n";
+                }else{
+                    printData(dataArray);
+                }
                 break;
             case 's':
                 system("cls");

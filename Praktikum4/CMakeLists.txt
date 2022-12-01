@@ -3,4 +3,4 @@ project(Praktikum4)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Praktikum4 main.cpp widerstand.h widerstand.cpp)
+add_executable(Praktikum4 main.cpp widerstand.h widerstand.cpp support.h)

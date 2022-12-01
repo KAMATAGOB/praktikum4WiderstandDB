@@ -19,7 +19,8 @@ struct widerstand
 };
 
 void printData(vector<widerstand> dataArray);
+void printData(widerstand dataArray);
 bool writeToFile(vector<widerstand> dataArray);
-
+bool importToVector(vector<widerstand> dataArray, widerstand input);
 
 #endif //PRAKTIKUM4_WIDERSTAND_H
