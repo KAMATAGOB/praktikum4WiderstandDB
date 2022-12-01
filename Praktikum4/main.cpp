@@ -2,7 +2,7 @@
 #include "widerstand.h"
 #include "support.h"
 
-int main(void)
+int main()
 {
 
     widerstand ds;           //ein Widerstandsdatensatz zum späteren Speichern in dataArray
@@ -55,7 +55,7 @@ int main(void)
                 }
                 //later after now only optimization
             case 'a':
-                if(dataArray.size() == 0){
+                if(dataArray.empty()){
                    cout << "Bitte erst Daten hinterlegen!\n";
                 }else{
                     printData(dataArray);
@@ -63,7 +63,7 @@ int main(void)
                 break;
             case 's':
                 system("cls");
-                if (writeToFile(dataArray)==true){
+                if (writeToFile(dataArray)){
                     cout << "Speichern erfolgreich!\n";
                 }else{
                     cout << "Speichern fehlgeschlagen\n";
