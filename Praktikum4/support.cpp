@@ -4,10 +4,16 @@
 #include "support.h"
 
 int convertToInt(char input[]) {
-    return 0;
+    int number = 0;
+
+
+    return number;
 }
 
 double convertToDouble(char input[]) {
-    return 0;
+    double number = 0;
+
+
+    return number;
 }
 
