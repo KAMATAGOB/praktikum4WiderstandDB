@@ -3,17 +3,17 @@
 //
 #include "support.h"
 
-int convertToInt(char input[]) {
+int convertToInt(char input[]) {//imp write this shit
     int number = 0;
 
-
+    number = atoi(input);
     return number;
 }
 
-double convertToDouble(char input[]) {
+double convertToDouble(char input[]) {//imp write this shit
     double number = 0;
 
-
+    number = atof(input);
     return number;
 }
 

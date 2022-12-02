@@ -4,6 +4,7 @@
 
 #ifndef PRAKTIKUM4_SUPPORT_H
 #define PRAKTIKUM4_SUPPORT_H
+#include "cstdlib"
 
 int convertToInt(char input[]);
 
