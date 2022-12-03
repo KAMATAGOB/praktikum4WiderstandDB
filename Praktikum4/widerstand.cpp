@@ -19,7 +19,7 @@ void printData(vector<widerstand> dataArray) {
 
     for(int i = 0; i < size; i++){
         cout << setw(30) << right << dataArray[i].design;
-        cout << setw(15) << right << dataArray[i].value << "  ";//impfixed display 3 after .
+        cout << setw(15) << right << fixed << setprecision(3) << dataArray[i].value << "  ";
 
         switch( dataArray[i].dim )
         {
@@ -42,7 +42,7 @@ void printData(widerstand dataArray) {
     cout << setw(20) << left << "  Einheit" << endl << endl;
 
     cout << setw(30) << right << dataArray.design;
-    cout << setw(15) << right << dataArray.value << "  ";//impfixed display 3 after .
+    cout << setw(15) << right << fixed << setprecision(3) << dataArray.value << "  ";
 
     switch( dataArray.dim )
     {
