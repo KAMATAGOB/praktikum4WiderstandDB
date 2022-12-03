@@ -1,4 +1,4 @@
-//
+//Implementation of PrintData and writeToFile
 // Created by Johannes Harnisch on 29.11.22.
 //
 #include "widerstand.h"
