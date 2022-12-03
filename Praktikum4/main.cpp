@@ -50,15 +50,17 @@ int main()
                 }
                 while(!(ds.dim == 0 || ds.dim == 1 || ds.dim==2 || ds.dim==3));
 
-
-                if(importToVector(dataArray, ds)){
+                dataArray.push_back(ds);
+                if(true){
                     printData(ds);
                     break;
+                } else{
+                    cout << "Fehler bei der Eingabe! Kein Wert gespeichert!";
                 }
                 //later after now only optimization
             case 'a':
                 if(dataArray.empty()){
-                   cout << "Bitte erst Daten hinterlegen!\n";
+                    cout << "Bitte erst Daten hinterlegen!\n";
                 }else{
                     printData(dataArray);
                 }
