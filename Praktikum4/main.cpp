@@ -47,7 +47,7 @@ int main()
 
                 do {
                     cout << "\n Widerstandsdimension ";
-                    cout << "\n\t MiliOhm --> 1\n"
+                    cout << "\n\t MiliOhm --> 1"
                             "\n\t Ohm     --> 2"
                             "\n\t KiloOhm --> 2"
                             "\n\t MegaOhm --> 4"
