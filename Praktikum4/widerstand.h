@@ -1,4 +1,5 @@
-//
+//contains libraries and funktionprototypes 
+// funktions to display data and save the data on a txt file
 // Created by Johannes Harnisch on 29.11.22.
 //
 
@@ -19,10 +20,24 @@ struct widerstand {
     double value;       //positive Wert größer Null
 };
 
+/// <summary>
+/// Prints the data from the vector into the console
+/// </summary>
+/// <param name="dataArray">the vector to print, vector, c.b.r.</param>
 void printData(vector<widerstand> dataArray);
 
+/// <summary>
+/// overload from printData
+/// prints o entry from the db
+/// </summary>
+/// <param name="dataArray">the entry to print, struct widerstand, c.b.v. </param>
 void printData(widerstand dataArray);
 
+/// <summary>
+/// saces the vector to a txt file
+/// </summary>
+/// <param name="dataArray">the vector to save, vector, c.b.r. </param>
+/// <returns>true if savin completed, bool, c.b.v. </returns>
 bool writeToFile(vector<widerstand> dataArray);
 
 #endif //PRAKTIKUM4_WIDERSTAND_H
