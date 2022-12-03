@@ -26,14 +26,16 @@ int main()
         cin >> chr;
 
         switch (tolower(chr)) {
-            case 'n':// IMP format output correctly
+            case 'n':
                 system("cls");
 
                 /*TODO: dunno what comes here*/
                 cout << "\n\n Eingabe eines neuen Datensatzes. ";
+
                 //Widerstands-Bauform
-                cout << "\n Widerstands-Bauform: ";
+                cout << "\n Widerstands-Bauform (Kohleschicht, Metallschicht, LDR etc.)\n: ";
                 cin >> ds.design;
+
                 //Widerstands-Wert
                 do {
                     cout << "\n Widerstands-Wert ";
@@ -44,12 +46,16 @@ int main()
                 while(!convertToDouble(puffer, ds.value));
 
                 do {
-                    cout << "\n Widerstands-dimension ";
-                    cout << "(mΩ --> 0, Ω --> 1, kΩ --> 2, MΩ -->3): ";
+                    cout << "\n Widerstandsdimension ";
+                    cout << "\n\t MiliOhm --> 1\n"
+                            "\n\t Ohm     --> 2"
+                            "\n\t KiloOhm --> 2"
+                            "\n\t MegaOhm --> 4"
+                            "\n\n\t --> ";
                     cin >> puffer;
                     ds.dim = atoi(puffer);
                 }
-                while(!(ds.dim == 0 || ds.dim == 1 || ds.dim==2 || ds.dim==3));
+                while(!(ds.dim == 4 || ds.dim == 1 || ds.dim==2 || ds.dim==3));
 
                 dataArray.push_back(ds);
                 count++;
@@ -58,13 +64,13 @@ int main()
                     break;
                 } else {
                     count--;
-                    cout << "Fehler bei der Eingabe! Kein Wert gespeichert!";
+                    cout << "\nFehler bei der Eingabe! Kein Wert gespeichert!";
                     break;
                 }
-                //later after now only optimization
+
             case 'a':
                 if(dataArray.empty()){
-                    cout << "Bitte erst Daten hinterlegen!\n";
+                    cout << "\nKeine Daten vorhanden";
                 }else{
                     printData(dataArray);
                 }
@@ -72,9 +78,9 @@ int main()
             case 's':
                 system("cls");
                 if (writeToFile(dataArray)){
-                    cout << "Speichern erfolgreich!\n";
+                    cout << "\nSpeichern erfolgreich!";
                 }else{
-                    cout << "Speichern fehlgeschlagen\n";
+                    cout << "\nSpeichern fehlgeschlagen!";
                 }
                 break;
             case 'b':
