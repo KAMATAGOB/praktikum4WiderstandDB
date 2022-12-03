@@ -5,20 +5,20 @@
 #include "support.h"
 
 
-bool convertToDouble(char input[], double& out) {
+bool convertToDouble(char input[], double &out) {
 
     bool ok = true;
     int count = 0;
 
     int length = strlen(input);
     for (int i = 0; i < length; ++i) {
-        if (input[i] != '.' && !(isdigit(input[i]))){
+        if (input[i] != '.' && !(isdigit(input[i]))) {
             ok = false;
         }
-        if(input[i] == '.'){
+        if (input[i] == '.') {
             count++;
         }
-        if(count>=2){
+        if (count >= 2) {
             ok = false;
         }
     }

@@ -10,6 +10,6 @@
 #include <cctype>
 
 
-bool convertToDouble(char input[], double& out);
+bool convertToDouble(char input[], double &out);
 
 #endif //PRAKTIKUM4_SUPPORT_H

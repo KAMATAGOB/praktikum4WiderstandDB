@@ -4,8 +4,7 @@
 #include "widerstand.h"
 #include "support.h"
 
-int main()
-{
+int main() {
 
     widerstand ds;           //ein Widerstandsdatensatz zum späteren Speichern in dataArray
     char chr, puffer[10];
@@ -15,8 +14,7 @@ int main()
     vector<widerstand> dataArray(0);
 
 
-
-    while(true){
+    while (true) {
         cout << "\n\n Was wollen Sie tun?";
         cout << "\n Neuen Widerstand eingeben        (n/N)";
         cout << "\n Widerstands-Datensaetze ausgeben (a/A)";
@@ -42,24 +40,22 @@ int main()
                     cout << "(Dezimaltrennzeichen ist der Punkt!): ";
                     cin >> puffer;
 
-                }
-                while(!convertToDouble(puffer, ds.value));
+                } while (!convertToDouble(puffer, ds.value));
 
                 do {
                     cout << "\n Widerstandsdimension ";
-                    cout << "\n\t MiliOhm --> 1\n"
+                    cout << "\n\t MiliOhm --> 1"
                             "\n\t Ohm     --> 2"
                             "\n\t KiloOhm --> 2"
                             "\n\t MegaOhm --> 4"
                             "\n\n\t --> ";
                     cin >> puffer;
                     ds.dim = atoi(puffer);
-                }
-                while(!(ds.dim == 4 || ds.dim == 1 || ds.dim==2 || ds.dim==3));
+                } while (!(ds.dim == 4 || ds.dim == 1 || ds.dim == 2 || ds.dim == 3));
 
                 dataArray.push_back(ds);
                 count++;
-                if(count == dataArray.size()){
+                if (count == dataArray.size()) {
                     printData(ds);
                     break;
                 } else {
@@ -69,17 +65,17 @@ int main()
                 }
 
             case 'a':
-                if(dataArray.empty()){
+                if (dataArray.empty()) {
                     cout << "\nKeine Daten vorhanden";
-                }else{
+                } else {
                     printData(dataArray);
                 }
                 break;
             case 's':
                 system("cls");
-                if (writeToFile(dataArray)){
+                if (writeToFile(dataArray)) {
                     cout << "\nSpeichern erfolgreich!";
-                }else{
+                } else {
                     cout << "\nSpeichern fehlgeschlagen!";
                 }
                 break;
@@ -87,7 +83,7 @@ int main()
                 exit = true;
                 break;
         }
-        if(exit) break;
+        if (exit) break;
     }
     return EXIT_SUCCESS;
 }
