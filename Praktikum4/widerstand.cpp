@@ -53,13 +53,14 @@ bool writeToFile(vector<widerstand> dataArray) {
     bool done = false;
 
     ofstream target;
-    target.open("tmp.txt", ios::in);
+    target.open("tmp.txt", ios::out);
 
     if(target.is_open()){
+
         for(int i = 0; i < dataArray.size(); i++){
-            target << setw(20) <<dataArray[i].design << "   ";
-            target << setw(10) <<dataArray[i].value << "   ";
-            target << setw(10) <<dataArray[i].dim << "   ";
+            target << setw(20) << dataArray[i].design << "   ";
+            target << setw(10) << dataArray[i].value << "   ";
+            target << setw(10) << dataArray[i].dim << "   ";
         }
 
         target.close();
@@ -68,6 +69,8 @@ bool writeToFile(vector<widerstand> dataArray) {
 
     return done;
 }
+
+
 
 
 

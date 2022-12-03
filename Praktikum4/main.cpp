@@ -10,6 +10,7 @@ int main()
     widerstand ds;           //ein Widerstandsdatensatz zum späteren Speichern in dataArray
     char chr, puffer[10];
     bool exit = false;
+    int count = 0;
 
     vector<widerstand> dataArray(0);
 
@@ -51,11 +52,14 @@ int main()
                 while(!(ds.dim == 0 || ds.dim == 1 || ds.dim==2 || ds.dim==3));
 
                 dataArray.push_back(ds);
-                if(true){
+                count++;
+                if(count == dataArray.size()){
                     printData(ds);
                     break;
-                } else{
+                } else {
+                    count--;
                     cout << "Fehler bei der Eingabe! Kein Wert gespeichert!";
+                    break;
                 }
                 //later after now only optimization
             case 'a':

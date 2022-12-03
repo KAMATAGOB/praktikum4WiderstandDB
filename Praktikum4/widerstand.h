@@ -24,5 +24,4 @@ void printData(vector<widerstand> dataArray);
 void printData(widerstand dataArray);
 bool writeToFile(vector<widerstand> dataArray);
 
-
 #endif //PRAKTIKUM4_WIDERSTAND_H
