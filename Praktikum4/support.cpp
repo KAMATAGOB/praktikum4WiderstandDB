@@ -1,19 +1,30 @@
 //
 // Created by Johannes Harnisch on 01.12.22.
 //
+
 #include "support.h"
 
-int convertToInt(char input[]) {//imp extend this shit
-    int number = 0;
 
-    number = atoi(input);
-    return number;
-}
+bool convertToDouble(char input[], double& out) {
 
-double convertToDouble(char input[]) {//imp extend this shit
-    double number = 0;
+    bool ok = true;
+    int count = 0;
 
-    number = atof(input);
-    return number;
+    int length = strlen(input);
+    for (int i = 0; i < length; ++i) {
+        if (input[i] != '.' && !(isdigit(input[i]))){
+            ok = false;
+        }
+        if(input[i] == '.'){
+            count++;
+        }
+        if(count>=2){
+            ok = false;
+        }
+    }
+
+    out = atof(input);
+
+    return ok;
 }
 

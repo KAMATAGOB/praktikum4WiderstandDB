@@ -39,15 +39,15 @@ int main()
                     cout << "\n Widerstands-Wert ";
                     cout << "(Dezimaltrennzeichen ist der Punkt!): ";
                     cin >> puffer;
-                    ds.value = convertToDouble(puffer);
+
                 }
-                while(ds.value <= 0);
+                while(!convertToDouble(puffer, ds.value));
 
                 do {
                     cout << "\n Widerstands-dimension ";
                     cout << "(mΩ --> 0, Ω --> 1, kΩ --> 2, MΩ -->3): ";
                     cin >> puffer;
-                    ds.dim = convertToInt(puffer);
+                    ds.dim = atoi(puffer);
                 }
                 while(!(ds.dim == 0 || ds.dim == 1 || ds.dim==2 || ds.dim==3));
 
