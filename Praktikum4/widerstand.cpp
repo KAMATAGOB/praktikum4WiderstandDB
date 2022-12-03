@@ -53,7 +53,7 @@ bool writeToFile(vector<widerstand> dataArray) {
     bool done = false;
 
     ofstream target;
-    target.open("tmp.txt", ios::out);
+    target.open("tmp.txt");
 
     if(target.is_open()){
 
