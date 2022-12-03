@@ -1,3 +1,11 @@
+/*
+    
+    This programm creates and administers an DB for resistors
+    the supporting libraries are widerstand.h and support.h
+    Created by Johannes Harnisch on 01.12.22.
+
+*/
+
 #include <iostream>
 #include <vector>
 
