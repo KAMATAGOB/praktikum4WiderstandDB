@@ -11,7 +11,7 @@ bool convertToDouble(char input[], double &out) {
     int count = 0;
 
     int length = strlen(input);
-    for (int i = 0; i < length; ++i) {
+    for (int i = 0; i < length; i++) {
         if (input[i] != '.' && !(isdigit(input[i]))) {
             ok = false;
         }
