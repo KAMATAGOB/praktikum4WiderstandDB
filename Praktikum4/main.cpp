@@ -75,6 +75,7 @@ int main() {
                 }
 
             case 'a':
+                system("cls");
                 if (dataArray.empty()) {
                     cout << "\nKeine Daten vorhanden";
                 } else {
