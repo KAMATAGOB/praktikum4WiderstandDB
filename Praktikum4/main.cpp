@@ -18,6 +18,7 @@ int main() {
     char chr, puffer[10];
     bool exit = false;
     int count = 0;
+    bool saved = true;
 
     vector<widerstand> dataArray(0);
 
@@ -35,7 +36,7 @@ int main() {
             case 'n':
                 system("cls");
 
-                /*TODO: dunno what comes here*/
+
                 cout << "\n\n Eingabe eines neuen Datensatzes. ";
 
                 //Widerstands-Bauform
@@ -65,6 +66,7 @@ int main() {
                 count++;
                 if (count == dataArray.size()) {
                     printData(ds);
+                    saved = false;
                     break;
                 } else {
                     count--;
@@ -83,13 +85,33 @@ int main() {
                 system("cls");
                 if (writeToFile(dataArray)) {
                     cout << "\nSpeichern erfolgreich!";
+                    saved = true;
                 } else {
                     cout << "\nSpeichern fehlgeschlagen!";
                 }
                 break;
             case 'b':
-                exit = true;
+                bool tmp = true;
+                if(saved){
+                    exit = true;
+                }else{
+                do {
+
+                        cout << "Daten noch nicht gespeichert! Weiter?\n[y]es or [n]o:";
+                        cin >> chr;
+                        switch (chr) {
+                            case 'y':
+                                exit = true;
+                                tmp = false;
+                                break;
+                            case 'n':
+                                tmp = false;
+                                break;
+                        }
+                    }while(tmp);
+
                 break;
+            }
         }
         if (exit) break;
     }
