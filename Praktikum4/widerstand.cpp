@@ -89,6 +89,46 @@ bool writeToFile(vector<widerstand> dataArray) {
     return done;
 }
 
+bool readFromFile(vector<widerstand> &dataArray) {
+    bool done = true;
+    ifstream quelle;
+    int i = 0;
+
+
+    quelle.open("tmp.txt", ios::in);
+
+    if (quelle.is_open()) {
+
+        while (!quelle.eof())
+        {
+
+
+
+            //feler change
+            if (dataArray[i].design.size() > 0) {
+                dataArray.resize(i + 1);
+                quelle >> dataArray[i].design;
+                quelle >> dataArray[i].value;
+                quelle >> dataArray[i].dim;
+                i++;
+            }
+            else {
+                break;
+
+            }
+
+        }
+    }
+    else {
+
+        done = false;
+    }
+
+    quelle.close();
+
+
+    return done;
+}
 
 
 

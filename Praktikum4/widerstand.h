@@ -40,4 +40,9 @@ void printData(widerstand dataArray);
 /// <returns>true if savin completed, bool, c.b.v. </returns>
 bool writeToFile(vector<widerstand> dataArray);
 
+
+/// <summary>reads saved values from tmp.txt and appends to the array</summary>
+/// <param name="dataArray">the array to which to print, struct widerstand, c.b.r. </param>
+/// <returns>was reading suksessful, bool, c.b.v.</returns>
+bool readFromFile(vector<widerstand> &dataArray);
 #endif //PRAKTIKUM4_WIDERSTAND_H

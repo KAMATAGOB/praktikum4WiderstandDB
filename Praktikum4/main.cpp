@@ -22,6 +22,10 @@ int main() {
 
     vector<widerstand> dataArray(0);
 
+    if (!readFromFile(dataArray))
+    {
+        cout << "\nKeine Daten vorhanden!";
+    }
 
     while (true) {
         cout << "\n\n Was wollen Sie tun?";
