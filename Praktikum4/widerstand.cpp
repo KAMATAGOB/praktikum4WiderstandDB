@@ -22,18 +22,18 @@ void printData(vector<widerstand> dataArray) {
         cout << setw(15) << right << fixed << setprecision(3) << dataArray[i].value << "  ";
 
         switch (dataArray[i].dim) {
-            case 1:
-                dim = "Milli-Ohm";
-                break;
-            case 2:
-                dim = "Ohm";
-                break;
-            case 3:
-                dim = "Kilo-Ohm";
-                break;
-            case 4:
-                dim = "Mega-Ohm";
-                break;
+        case 1:
+            dim = "Milli-Ohm";
+            break;
+        case 2:
+            dim = "Ohm";
+            break;
+        case 3:
+            dim = "Kilo-Ohm";
+            break;
+        case 4:
+            dim = "Mega-Ohm";
+            break;
         }
 
         cout << setw(20) << left << dim << endl << endl;
@@ -52,18 +52,18 @@ void printData(widerstand dataArray) {
     cout << setw(15) << right << fixed << setprecision(3) << dataArray.value << "  ";
 
     switch (dataArray.dim) {
-        case 1:
-            dim = "Milli-Ohm";
-            break;
-        case 2:
-            dim = "Ohm";
-            break;
-        case 3:
-            dim = "Kilo-Ohm";
-            break;
-        case 4:
-            dim = "Mega-Ohm";
-            break;
+    case 1:
+        dim = "Milli-Ohm";
+        break;
+    case 2:
+        dim = "Ohm";
+        break;
+    case 3:
+        dim = "Kilo-Ohm";
+        break;
+    case 4:
+        dim = "Mega-Ohm";
+        break;
     }
     cout << setw(20) << left << dim << endl << endl;
 }
@@ -90,11 +90,10 @@ bool writeToFile(vector<widerstand> dataArray) {
     return done;
 }
 
-bool readFromFile(vector<widerstand> &dataArray) {
+bool readFromFile(vector<widerstand>& dataArray) {
     bool done = true;
     ifstream quelle;
     int i = 0;
-
 
     quelle.open("tmp.txt", ios::in);
 
@@ -106,23 +105,23 @@ bool readFromFile(vector<widerstand> &dataArray) {
             quelle >> dataArray[i].value;
             quelle >> dataArray[i].dim;
             i++;
-            if (!(dataArray[i].dim == (1) || dataArray[i].dim == (2) ||
-                    dataArray[i].dim == (3) || dataArray[i].dim == (4))) {
-
-                dataArray.resize(i + 1);
-            }
+            
         }
-    } else {
+        i--;
+        if (!(dataArray[i].dim == (1) || dataArray[i].dim == (2) || 
+            dataArray[i].dim == (3) || dataArray[i].dim == (4))) {
+                dataArray.resize(i);
+            }
+    }
+    else {
         done = false;
     }
 
     quelle.close();
-
-
     return done;
 }
 
-bool suchen(vector<widerstand> dataArray, string searchWord, vector<widerstand> &result) {
+bool suchen(vector<widerstand> dataArray, string searchWord, vector<widerstand>& result) {
     bool foundSome = false;
     int length = dataArray.size();
 
@@ -135,23 +134,19 @@ bool suchen(vector<widerstand> dataArray, string searchWord, vector<widerstand> 
     return foundSome;
 }
 
-void sortiere(vector<widerstand> &dataArray) {
+void sortiere(vector<widerstand>& dataArray) {
     bool change;
     int length = dataArray.size();
 
     do {
-       change = false;
-        for (int i = 0; i < (length-1); ++i) {
-            if (dataArray[i].value > dataArray[(i+1)].value){
+        change = false;
+        for (int i = 0; i < (length - 1); ++i) {
+            if (dataArray[i].value > dataArray[(i + 1)].value) {
                 widerstand tmp = dataArray[i];
-                dataArray[i] = dataArray[(i+1)];
-                dataArray[(i+1)] =tmp;
+                dataArray[i] = dataArray[(i + 1)];
+                dataArray[(i + 1)] = tmp;
                 change = true;
             }
         }
-    }while(change);
+    } while (change);
 }
-
-
-
-
