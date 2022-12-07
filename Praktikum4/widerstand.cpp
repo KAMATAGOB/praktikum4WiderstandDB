@@ -101,22 +101,21 @@ bool readFromFile(vector<widerstand> &dataArray) {
 
         while (!quelle.eof())
         {
-
-
-
-            //feler change
             if (dataArray[i].design.size() > 0) {
                 dataArray.resize(i + 1);
                 quelle >> dataArray[i].design;
                 quelle >> dataArray[i].value;
                 quelle >> dataArray[i].dim;
                 i++;
+
+                if(dataArray[i].dim == 0){
+                    dataArray.resize(i + 1);
+                }
+
             }
             else {
                 break;
-
             }
-
         }
     }
     else {
