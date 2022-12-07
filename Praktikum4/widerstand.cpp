@@ -101,21 +101,14 @@ bool readFromFile(vector<widerstand> &dataArray) {
 
         while (!quelle.eof())
         {
-            if (dataArray[i].design.size() > 0) {
                 dataArray.resize(i + 1);
                 quelle >> dataArray[i].design;
                 quelle >> dataArray[i].value;
                 quelle >> dataArray[i].dim;
                 i++;
-
                 if(dataArray[i].dim == 0){
                     dataArray.resize(i + 1);
                 }
-
-            }
-            else {
-                break;
-            }
         }
     }
     else {
@@ -129,8 +122,23 @@ bool readFromFile(vector<widerstand> &dataArray) {
     return done;
 }
 
-bool suchen(vector<widerstand> &dataArray, string searchWord) {
-    return false;
+bool suchen(vector<widerstand> dataArray, string searchWord, vector<widerstand> &result) {
+    bool foundSome = false;
+    int length =  dataArray.size();
+
+    for(int i = 0; i< length; i++){
+        if(dataArray[i].design == searchWord){
+            foundSome = true;
+            result.push_back(dataArray[i]);
+        }
+
+    }
+
+
+
+
+
+    return foundSome;
 }
 
 void sortiere(vector<widerstand> &dataArray) {
