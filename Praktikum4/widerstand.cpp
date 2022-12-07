@@ -80,6 +80,7 @@ bool writeToFile(vector<widerstand> dataArray) {
             target << setw(30) << dataArray[i].design << "   ";
             target << setw(15) << dataArray[i].value << "   ";
             target << setw(20) << dataArray[i].dim << "   ";
+            target << endl;
         }
 
         target.close();
