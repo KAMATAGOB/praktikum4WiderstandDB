@@ -1,10 +1,12 @@
-//contains libraries and funktionprototypes 
+//supports the main funktion
+// contains libraries and funktionprototypes 
 // funktions to display data and save the data on a txt file
-// Created by Johannes Harnisch on 29.11.22.
+//Created by Johannes Harnisch on 01.12.22.
 //
 
-#ifndef PRAKTIKUM4_WIDERSTAND_H
-#define PRAKTIKUM4_WIDERSTAND_H
+
+
+#pragma once
 
 #include <vector>
 #include <string>
@@ -14,10 +16,11 @@
 
 using namespace std;
 
-struct widerstand {
-    int dim;            //mΩ --> 0, Ω --> 1, kΩ --> 2, MΩ -->3
+struct widerstand
+{
+    int dim = NULL;            //mΩ --> 0, Ω --> 1, kΩ --> 2, MΩ -->3
     string design;      //Kohleschicht, Metalloxid etc.
-    double value;       //positive Wert größer Null
+    double value = NULL;       //positive Wert größer Null
 };
 
 /// <summary>
@@ -40,19 +43,24 @@ void printData(widerstand dataArray);
 /// <returns>true if savin completed, bool, c.b.v. </returns>
 bool writeToFile(vector<widerstand> dataArray);
 
-
 /// <summary>reads saved values from tmp.txt and appends to the array</summary>
 /// <param name="dataArray">the array to which to print, struct widerstand, c.b.r. </param>
 /// <returns>was reading suksessful, bool, c.b.v.</returns>
-bool readFromFile(vector<widerstand> &dataArray);
+bool readFromFile(vector<widerstand>& dataArray);
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name="dataArray">the vector in which to search, c.b.v.</param>
+/// <param name="searchWord">the word for which to search, c.b.v.</param>
+/// <param name="result">the vector of entrys found, c.b.r.</param>
+/// <returns>did the funktion find one entry</returns>
+bool suchen(vector<widerstand> dataArray, string searchWord, vector<widerstand>& result);
 
-bool suchen(vector<widerstand> dataArray,string searchWord, vector<widerstand> &result);
-
-
-void sortiere(vector<widerstand> &dataArray);
-
-
-#endif //PRAKTIKUM4_WIDERSTAND_H
+/// <summary>
+/// sorts the array with bubbleSort
+/// </summary>
+/// <param name="dataArray">the array to be sorted, c.b.r</param>
+void sortiere(vector<widerstand>& dataArray);
 
 
