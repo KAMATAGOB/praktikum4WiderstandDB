@@ -19,7 +19,9 @@ int main() {
     bool exit = false;
     int count = 0;
     bool saved = true;
+    string searchWord;
 
+    vector<widerstand> resultOfSearch(0);
     vector<widerstand> dataArray(0);
 
     if (!readFromFile(dataArray))
@@ -32,6 +34,8 @@ int main() {
         cout << "\n Neuen Widerstand eingeben        (n/N)";
         cout << "\n Widerstands-Datensaetze ausgeben (a/A)";
         cout << "\n Datensaetze speichern            (s/S)";
+        cout << "\n Widerstandstypen suchen          (f/F)";
+        cout << "\n Datensätze sortieren             (o/O)";
         cout << "\n Programm beenden                 (b/B)" << endl;
         cout << "\n\n ? ";
         cin >> chr;
@@ -94,6 +98,25 @@ int main() {
                 } else {
                     cout << "\nSpeichern fehlgeschlagen!";
                 }
+                break;
+            case 'f':
+                if(dataArray.size() < 2){
+                    cout << "\nDB ist kleiner 2! Suche sinnlos!";
+                    break;
+                }
+                cout << "\nWelchen Typ wollen sie suchen?"
+                     << "\n(Wort eingeben)!"
+                     << "\n --> ";
+                cin >> searchWord;
+
+                if (!suchen(dataArray, searchWord, resultOfSearch)){
+                    cout << "Keine Uebereistimmungen";
+                    break;
+                }
+                printData(resultOfSearch);
+                break;
+            case 'o':
+                sortiere(dataArray);
                 break;
             case 'b':
                 bool tmp = true;
