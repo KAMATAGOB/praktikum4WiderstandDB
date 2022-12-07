@@ -108,7 +108,7 @@ int main() {
                      << "\n(Wort eingeben)!"
                      << "\n --> ";
                 cin >> searchWord;
-
+                resultOfSearch.resize(0);
                 if (!suchen(dataArray, searchWord, resultOfSearch)){
                     cout << "Keine Uebereistimmungen";
                     break;
