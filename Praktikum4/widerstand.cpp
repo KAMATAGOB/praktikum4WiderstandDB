@@ -135,7 +135,20 @@ bool suchen(vector<widerstand> dataArray, string searchWord, vector<widerstand> 
 }
 
 void sortiere(vector<widerstand> &dataArray) {
+    bool change;
+    int length = dataArray.size();
 
+    do {
+       change = false;
+        for (int i = 0; i < (length-1); ++i) {
+            if (dataArray[i].value > dataArray[(i+1)].value){
+                widerstand tmp = dataArray[i];
+                dataArray[i] = dataArray[(i+1)];
+                dataArray[(i+1)] =tmp;
+                change = true;
+            }
+        }
+    }while(change);
 }
 
 
