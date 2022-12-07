@@ -2,8 +2,7 @@
 // Created by Johannes Harnisch on 01.12.22.
 //
 
-#ifndef PRAKTIKUM4_SUPPORT_H
-#define PRAKTIKUM4_SUPPORT_H
+#pragma once
 
 #include "cstdlib"
 #include <cstring>
@@ -15,6 +14,5 @@
 /// <param name="input">input to be converted, array of char, c.b.r.</param>
 /// <param name="out">the var in which the value is written, double, c.b.r. </param>
 /// <returns>is it possible to convert the input to double, bool, c.b.v. </returns>
-bool convertToDouble(char input[], double &out);
+bool convertToDouble(char input[], double& out);
 
-#endif //PRAKTIKUM4_SUPPORT_H
