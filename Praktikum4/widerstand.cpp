@@ -129,6 +129,14 @@ bool readFromFile(vector<widerstand> &dataArray) {
     return done;
 }
 
+bool suchen(vector<widerstand> &dataArray, string searchWord) {
+    return false;
+}
+
+void sortiere(vector<widerstand> &dataArray) {
+
+}
+
 
 
 

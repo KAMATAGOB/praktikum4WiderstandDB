@@ -45,4 +45,14 @@ bool writeToFile(vector<widerstand> dataArray);
 /// <param name="dataArray">the array to which to print, struct widerstand, c.b.r. </param>
 /// <returns>was reading suksessful, bool, c.b.v.</returns>
 bool readFromFile(vector<widerstand> &dataArray);
+
+
+bool suchen(vector<widerstand> dataArray,string searchWord, vector<widerstand> &result);
+
+
+void sortiere(vector<widerstand> &dataArray);
+
+
 #endif //PRAKTIKUM4_WIDERSTAND_H
+
+
