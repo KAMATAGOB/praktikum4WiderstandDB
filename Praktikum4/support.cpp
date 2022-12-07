@@ -5,13 +5,13 @@
 #include "support.h"
 
 
-bool convertToDouble(char input[], double &out) {
+bool convertToDouble(char input[], double& out) {
 
     bool ok = true;
     int count = 0;
 
     int length = strlen(input);
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < length; ++i) {
         if (input[i] != '.' && !(isdigit(input[i]))) {
             ok = false;
         }
@@ -27,4 +27,3 @@ bool convertToDouble(char input[], double &out) {
 
     return ok;
 }
-
