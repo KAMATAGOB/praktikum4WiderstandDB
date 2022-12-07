@@ -126,18 +126,12 @@ bool suchen(vector<widerstand> dataArray, string searchWord, vector<widerstand> 
     bool foundSome = false;
     int length =  dataArray.size();
 
-    for(int i = 0; i< length; i++){
-        if(dataArray[i].design == searchWord){
+    for(int i = 0; i < length; i++) {
+        if (dataArray[i].design == searchWord) {
             foundSome = true;
             result.push_back(dataArray[i]);
         }
-
     }
-
-
-
-
-
     return foundSome;
 }
 
